@@ -2,6 +2,8 @@ package guru.springframework.msscbeerservice.web.controller;
 
 import java.util.UUID;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class BeerController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Object> saveBeer(@RequestBody BeerDto beerDto) {
+	public ResponseEntity<Object> saveBeer(@Valid @RequestBody BeerDto beerDto) {
 		
 		beerDto.setId(UUID.randomUUID());
 		HttpHeaders headers = new HttpHeaders();
@@ -39,7 +41,7 @@ public class BeerController {
 	}
 	
 	@PutMapping("/{beerId}")
-	public ResponseEntity<Object> updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto) {
+	public ResponseEntity<Object> updateBeerById(@PathVariable("beerId") UUID beerId, @Valid @RequestBody BeerDto beerDto) {
 		
 		// TODO implement
 		return new ResponseEntity<Object>(HttpStatus.NO_CONTENT);
