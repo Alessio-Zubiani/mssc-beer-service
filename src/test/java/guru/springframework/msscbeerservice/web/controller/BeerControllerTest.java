@@ -41,7 +41,7 @@ class BeerControllerTest {
 	@Test
 	void testGetBeerById() throws Exception {
 		
-		Mockito.when(this.beerService.getBeerById(Mockito.any(UUID.class)))
+		Mockito.when(this.beerService.getBeerById(Mockito.any(UUID.class), Mockito.anyBoolean()))
 			.thenReturn(this.getValidBeerDto());
 		
 		this.mockMvc.perform(get ("/api/v1/beer/{beerId}", UUID.randomUUID().toString())

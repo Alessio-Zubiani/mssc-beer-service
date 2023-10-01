@@ -9,7 +9,7 @@ import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
 import lombok.RequiredArgsConstructor;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class BeerLoader implements CommandLineRunner {
 
