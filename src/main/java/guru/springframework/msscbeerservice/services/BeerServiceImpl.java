@@ -94,6 +94,17 @@ public class BeerServiceImpl implements BeerService {
 		
 		return dto;
 	}
+	
+	@Override
+	public BeerDto getBeerByUpc(String upc) {
+		
+		Optional<Beer> o = this.beerRepository.findByUpc(upc);
+		if(o.isEmpty()) {
+			throw new NotFoundException(new StringBuilder("No beer found with UPC: ").append(upc).toString());
+		}
+		
+		return this.beerMapper.beerToBeerDto(o.get());
+	}
 
 	@Override
 	public BeerDto saveBeer(BeerDto beerDto) {

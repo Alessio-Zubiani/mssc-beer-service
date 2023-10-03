@@ -3,7 +3,6 @@ package guru.springframework.msscbeerservice.bootstrap;
 import java.math.BigDecimal;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
@@ -28,7 +27,7 @@ public class BeerLoader implements CommandLineRunner {
 					.beerStyle("IPA")
 					.quantityToBrew(200)
 					.minOnHand(12)
-					.upc(337010000001L)
+					.upc("337010000001")
 					.price(new BigDecimal(12.95))
 					.build());
 			
@@ -37,7 +36,7 @@ public class BeerLoader implements CommandLineRunner {
 					.beerStyle("PALE_ALE")
 					.quantityToBrew(200)
 					.minOnHand(12)
-					.upc(337010000002L)
+					.upc("337010000002")
 					.price(new BigDecimal(11.95))
 					.build());
 		}
